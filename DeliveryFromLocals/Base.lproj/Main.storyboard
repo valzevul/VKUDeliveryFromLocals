@@ -1,26 +1,203 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A3J-Ty-jy3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Delivery From Locals-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CitiesViewController" customModule="DeliveryFromLocals" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG9-yQ-3wE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="urZ-99-hoS"/>
+                                    <constraint firstAttribute="height" constant="160" id="wps-5j-Ncr"/>
+                                </constraints>
+                                <state key="normal" title="Москва" backgroundImage="msk">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="moscowButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6U-qC-mp9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgV-vl-DrZ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="G8V-6n-qYq"/>
+                                    <constraint firstAttribute="height" constant="160" id="gy8-gN-IQG"/>
+                                </constraints>
+                                <state key="normal" title="Санкт-Петербург" backgroundImage="spb"/>
+                                <connections>
+                                    <segue destination="ox2-bo-hEh" kind="show" identifier="Open St. Petersburg Details" id="En2-DB-pTq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWb-5i-S6h">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="C77-fS-OcN"/>
+                                    <constraint firstAttribute="height" constant="160" id="DXG-gx-rdN"/>
+                                </constraints>
+                                <state key="normal" title="Екатеринбург" backgroundImage="ekb"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-kT-qCH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="CH9-bT-lwW"/>
+                                    <constraint firstAttribute="height" constant="160" id="vqD-VK-lD9"/>
+                                </constraints>
+                                <state key="normal" title="Казань" backgroundImage="kzn"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zWb-5i-S6h" secondAttribute="bottom" constant="20" id="22y-e3-6Nt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HG9-yQ-3wE" secondAttribute="leading" id="3AL-7P-7GC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zWb-5i-S6h" secondAttribute="leading" id="5Xx-CZ-8se"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ihe-kT-qCH" secondAttribute="trailing" id="8KS-VN-2dx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ihe-kT-qCH" secondAttribute="bottom" constant="20" id="WAz-e7-Km5"/>
+                            <constraint firstItem="mgV-vl-DrZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="asG-YQ-x9M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mgV-vl-DrZ" secondAttribute="trailing" id="fdY-EH-P18"/>
+                            <constraint firstItem="HG9-yQ-3wE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="zSI-og-Krr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Delivery From Locals" id="1xM-1T-WE0"/>
+                    <connections>
+                        <segue destination="ox2-bo-hEh" kind="show" identifier="General Segue" id="sV8-XB-Nfw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+        </scene>
+        <!--SPb-->
+        <scene sceneID="8j1-xf-KE3">
+            <objects>
+                <viewController title="SPb" id="ox2-bo-hEh" customClass="CategoryViewController" customModule="DeliveryFromLocals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xiq-im-Iih"/>
+                        <viewControllerLayoutGuide type="bottom" id="R9C-ft-MsS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="moZ-Sb-H2A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qch-er-0QG">
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQg-RQ-IrG">
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tG-zA-mtu">
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbr-3G-KB7">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="bme-a4-13h" kind="show" id="Kgm-aO-isr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5tG-zA-mtu" firstAttribute="leading" secondItem="jQg-RQ-IrG" secondAttribute="trailing" constant="8" id="50F-Ta-GWL"/>
+                            <constraint firstItem="5tG-zA-mtu" firstAttribute="top" secondItem="xiq-im-Iih" secondAttribute="bottom" id="94G-wG-nbL"/>
+                            <constraint firstItem="jQg-RQ-IrG" firstAttribute="leading" secondItem="qch-er-0QG" secondAttribute="trailing" constant="8" id="BHX-Hz-FDK"/>
+                            <constraint firstItem="jQg-RQ-IrG" firstAttribute="top" secondItem="xiq-im-Iih" secondAttribute="bottom" id="Inv-MX-EQe"/>
+                            <constraint firstItem="jbr-3G-KB7" firstAttribute="top" secondItem="xiq-im-Iih" secondAttribute="bottom" id="Ma7-GN-dlM"/>
+                            <constraint firstItem="qch-er-0QG" firstAttribute="top" secondItem="xiq-im-Iih" secondAttribute="bottom" id="OUW-4s-Nhi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="qch-er-0QG" secondAttribute="leading" id="VFg-V7-Ipe"/>
+                            <constraint firstItem="jbr-3G-KB7" firstAttribute="leading" secondItem="5tG-zA-mtu" secondAttribute="trailing" constant="8" id="wrU-Th-VWY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yt3-ni-axQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760.8" y="35.532233883058474"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="quv-jz-t0f">
+            <objects>
+                <viewController title="Details" id="bme-a4-13h" customClass="FoodViewController" customModule="DeliveryFromLocals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="doc-q7-JSR"/>
+                        <viewControllerLayoutGuide type="bottom" id="dJR-OL-il6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xy3-PZ-nwp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="korushka" translatesAutoresizingMaskIntoConstraints="NO" id="4vi-ir-X8m">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="drt-T6-r0b"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alu-FW-j1R">
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-Wz-a1b">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="457" id="SzU-ZU-RQE"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4vi-ir-X8m" secondAttribute="trailing" id="Baz-He-Rp4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YcQ-Wz-a1b" secondAttribute="trailing" id="ClF-r8-fJT"/>
+                            <constraint firstItem="dJR-OL-il6" firstAttribute="top" secondItem="YcQ-Wz-a1b" secondAttribute="bottom" constant="8" id="EZX-Nu-Xw2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="4vi-ir-X8m" secondAttribute="leading" id="Rgs-tS-CGQ"/>
+                            <constraint firstItem="YcQ-Wz-a1b" firstAttribute="leading" secondItem="Alu-FW-j1R" secondAttribute="trailing" constant="-343" id="Su2-sF-mPB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YcQ-Wz-a1b" secondAttribute="leading" id="ZjX-Oo-dny"/>
+                            <constraint firstItem="Alu-FW-j1R" firstAttribute="top" secondItem="4vi-ir-X8m" secondAttribute="bottom" constant="8" id="fAZ-VS-AcI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Alu-FW-j1R" secondAttribute="leading" id="qer-LO-arx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Alu-FW-j1R" secondAttribute="trailing" id="qhb-Gh-TeL"/>
+                            <constraint firstItem="4vi-ir-X8m" firstAttribute="top" secondItem="doc-q7-JSR" secondAttribute="bottom" id="vgR-xg-pwC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuR-L1-C0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543.1999999999998" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mye-fY-8MG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A3J-Ty-jy3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rIF-iZ-LXu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dal-pw-FV9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BBj-s0-w5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ekb" width="900" height="601"/>
+        <image name="korushka" width="640" height="480"/>
+        <image name="kzn" width="550" height="412"/>
+        <image name="msk" width="660" height="440"/>
+        <image name="spb" width="900" height="728"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sV8-XB-Nfw"/>
+    </inferredMetricsTieBreakers>
 </document>
