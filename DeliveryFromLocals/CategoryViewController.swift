@@ -10,6 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController {
 
+    // Поле, в которое можно будет записать значение при переходе на данный контроллер
     var price = 100.0
       
     override func viewDidLoad() {
